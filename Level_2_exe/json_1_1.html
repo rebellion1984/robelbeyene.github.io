@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+var requestURL = 'https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/example.json';
+var request = new XMLHttpRequest();
+request.open('GET', requestURL);
+request.responseType = 'json'
+request.send();
+
+request.onload = function () {
+var superHeroes = request.response;
+
+/* var squad = document.getElementById("squadName");
+var town = document.getElementById("homeTown");
+var established = document.getElementById("formed");
+var base = document.getElementById("secretBase");
+var status = document.getElementById("active"); */
+
+var squadName = document.createTextNode(superHeroes["squadName"]);
+var yearEstablished = document.createTextNode("Established: "+ superHeroes["formed"]);
+var location = document.createTextNode("Hometown: "+ superHeroes["homeTown"]);
+var operations = document.createTextNode("Secret Base: "+ superHeroes["secretBase"]);
+var active = document.createTextNode("Active? " + superHeroes["active"]);
+
+squad.appendChild(squadName);
+town.appendChild(location);
+established.appendChild(yearEstablished);
+base.appendChild(operations);
+status.appendChild(active);
+
+/* for(let i in superHeroes.members){
+    var member = superHeroes.members[i];
+    var powerString="";
+
+    for(let x in member.powers){
+        powerString+= member.powers[x] + "\n";
+    }
+    alert("Name: " + member.name + "\n Age:" + member.age +  "\n Secret Identity: "+ member.secretIdentity + "\n Secret Powers : " +powerString);
+} */
+</script>
+
+</body>
+</html>

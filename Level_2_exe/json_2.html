@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <script>
+        function search() {
+            let searchBox = document.getElementById(searchBox);
+            let searchTerm = searchBox.value;
+            let paragraph = document.createElement("p");
+            result = "";
+
+            var requestURL = 'https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/kings.json';
+            var request = new XMLHttpRequest();
+            request.open('GET', requestURL);
+            request.responseType = 'json'
+            request.send();
+
+            reqest.load = function search() {
+                let kings = request.response;
+
+                for (let i in kings) {
+                    let tempValue = kings[i];
+
+                    if (tempValue.nm.includes(searchTerm) || tempValue.cty.includes(searchTerm)) {
+                        result += tempValue.nm + ""
+                        result += tempValue.cty + ""
+                        result += tempValue.hse + ""
+                        result += tempValue.yrs + "<br>";
+                        console.log(result);
+                    }
+                }
+                paragraph.innerHTML=result;
+                document.getElementById("main").insertBefore(paragraph, searchBox);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h3> QA Garage </h3>
+
+    <div id="wrapper">
+        <table align='center' cellspacing=2 cellpadding=5 id="data_table" border=1>
+            <tr>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Age</th>
+                <th>Bill </th>
+
+                <tr>
+                    <td><input type="text" id="new_make"></td>
+                    <td><input type="text" id="new_model"></td>
+                    <td><input type="text" id="new_age"></td>
+                    <td><input type="text" id="new_bill"></td>
+                    <td><input type="button" class="add" onclick="add_vehicle();" value="Add Vehicle"></td>
+                </tr>
+
+        </table>
+    </div>
+
+     <script>
+        /* function delete_row(no) {
+            document.getElementById("row" + no + "").outerHTML = "";
+        } */
+
+         function add_vehicle() {
+            var new_make = document.getElementById("new_make").value;
+            var new_model = document.getElementById("new_model").value;
+            var new_age = document.getElementById("new_age").value;
+            var new_bill = document.getElementById("new_bill").value;
+
+            var table = document.getElementById("data_table");
+            var table_len = (table.rows.length) - 1;
+            var row = table.insertRow(table_len).outerHTML = "<tr id='row" + table_len + "'><td id='make_row" + table_len + "'>" + new_make + "</td><td id='model_row" + table_len + "'>" + new_model + "</td><td id='age_row" + table_len + "'>" + new_age + "</td><td id='bill_row" + table_len + "'>" + new_bill + "</td>/* <td><input type='button' id='edit_button" + table_len + "' value='Edit' class='edit' onclick='edit_row(" + table_len + ")'> */ <input type='button' id='save_button" + table_len + "' value='Save' class='save' onclick='save_row(" + table_len + ")'> <input type='button' value='Delete' class='delete' onclick='delete_row(" + table_len + ")'></td></tr>";
+
+            document.getElementById("new_make").value = "";
+            document.getElementById("new_model").value = "";
+            document.getElementById("new_age").value = "";
+            document.getElementById("new_bill").value = "";
+        } 
+    </script> 
+
+</body>
+
+</html>
