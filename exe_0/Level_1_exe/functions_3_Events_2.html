@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript">
+        function createPersonObject() {
+
+            var personObject = {
+                name: document.getElementById("_name").value,
+                age: document.getElementById("_age").value,
+                occupation: document.getElementById("_occupation").value
+            };
+            window.alert("Name= " + personObject.name + " Age= " + parseInt(personObject.age) + " Occupation= " + personObject.occupation);
+        }
+    </script>
+</head>
+
+<body>
+
+    name:<br>
+    <input type="text" id="_name">
+    <br> age:
+    <br>
+    <input type="text" id="_age">
+    <br> occupation:
+    <br>
+    <input type="text" id="_occupation">
+    <br><br>
+    <button onclick="createPersonObject()">Display Person</button>
+
+    <p id="name"></p>
+
+</body>
+
+</html>

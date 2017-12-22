@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h3> QA Garage </h3>
+
+    <div id="wrapper">
+        <table align='center' cellspacing=2 cellpadding=5 id="data_table" border=1>
+            <tr>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Age</th>
+                <th>Bill </th>
+
+                <tr>
+                    <td><input type="text" id="new_make"></td>
+                    <td><input type="text" id="new_model"></td>
+                    <td><input type="text" id="new_age"></td>
+                    <td><input type="text" id="new_bill"></td>
+                    <td><input type="button" class="add" onclick="add_vehicle();" value="Add Vehicle"></td>
+                </tr>
+
+        </table>
+    </div>
+
+    <script>
+        function delete_row(no) {
+            document.getElementById("row" + no + "").outerHTML = "";
+        }
+
+        function add_vehicle() {
+            var new_make = document.getElementById("new_make").value;
+            var new_model = document.getElementById("new_model").value;
+            var new_age = document.getElementById("new_age").value;
+            var new_bill = document.getElementById("new_bill").value;
+
+            var table = document.getElementById("data_table");
+            var table_len = (table.rows.length) - 1;
+            var row = table.insertRow(table_len).outerHTML = "<tr id='row" + table_len + "'><td id='make_row" + table_len + "'>" + new_make + "</td><td id='model_row" + table_len + "'>" + new_model + "</td><td id='age_row" + table_len + "'>" + new_age + "</td><td id='bill_row" + table_len + "'>" + new_bill + "</td>/* <td><input type='button' id='edit_button" + table_len + "' value='Edit' class='edit' onclick='edit_row(" + table_len + ")'> */ <input type='button' id='save_button" + table_len + "' value='Save' class='save' onclick='save_row(" + table_len + ")'> <input type='button' value='Delete' class='delete' onclick='delete_row(" + table_len + ")'></td></tr>";
+
+            document.getElementById("new_make").value = "";
+            document.getElementById("new_model").value = "";
+            document.getElementById("new_age").value = "";
+            document.getElementById("new_bill").value = "";
+        }
+
+        /* function edit_row(no)
+{
+ document.getElementById("edit_button"+no).style.display="none";
+ document.getElementById("save_button"+no).style.display="block";
+	
+ var name=document.getElementById("name_row"+no);
+ var country=document.getElementById("country_row"+no);
+ var age=document.getElementById("age_row"+no);
+	
+ var name_data=name.innerHTML;
+ var country_data=country.innerHTML;
+ var age_data=age.innerHTML;
+	
+ name.innerHTML="<input type='text' id='name_text"+no+"' value='"+name_data+"'>";
+ country.innerHTML="<input type='text' id='country_text"+no+"' value='"+country_data+"'>";
+ age.innerHTML="<input type='text' id='age_text"+no+"' value='"+age_data+"'>";
+} */
+
+        /* function save_row(no) {
+            var make_val = document.getElementById("make_text" + no).value;
+            var model_val = document.getElementById("model_text" + no).value;
+            var age_val = document.getElementById("age_text" + no).value;
+            var vehicle_bill = document.getElementById("bill_text"+no).value;
+
+            document.getElementById("make_row" + no).innerHTML = make_val;
+            document.getElementById("model_row" + no).innerHTML = model_val;
+            document.getElementById("age_row" + no).innerHTML = age_val;
+            document.getElementById("bill_row"+no).innerHTML = vehicle_bill;
+
+            document.getElementById("edit_button" + no).style.display = "block";
+            document.getElementById("save_button" + no).style.display = "none";
+        } */
+    </script>
+</body>
+
+</html>

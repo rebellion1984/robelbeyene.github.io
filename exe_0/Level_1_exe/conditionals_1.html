@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript">
+        function createPersonObject() {
+
+            var personObject = {
+                name: document.getElementById("_name").value,
+                age: document.getElementById("_age").value,
+                occupation: document.getElementById("_occupation").value
+            };
+            window.alert("Name= " + personObject.name + " Age= " + parseInt(personObject.age) + " Occupation= " + personObject.occupation);
+
+            
+            if(personObject.age >= 20 && personObject.age <=40){
+                window.alert("Age between 20 and 40");
+            }else{
+                window.alert("Age not between 20 and 40");
+            }
+        
+        }
+/* function ageChecker() {
+            if(personObject.age >= 20 && personObject.age <=40){
+                window.alert("Age between 20 and 40");
+            }else{
+                window.alert("Age not between 20 and 40");
+            }
+        } */
+         
+    </script>
+</head>
+
+<body>
+
+    name:<br>
+    <input type="text" id="_name">
+    <br> age:
+    <br>
+    <input type="text" id="_age">
+    <br> occupation:
+    <br>
+    <input type="text" id="_occupation">
+    <br><br>
+    <button onclick="createPersonObject()">Display Person</button>
+
+     <p>Check if age is between 20 to 40 or other:</p>
+
+    <!-- <button onclick="ageChecker()">Check Age</button>  -->
+
+</body>
+
+</html>

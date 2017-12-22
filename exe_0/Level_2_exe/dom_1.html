@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to make a paragraph tag.</p>
+<button onclick="createParagraph()">Create</button>
+
+<p>Click the button to replace the paragraph tag.</p>
+<input type="text" id="paragraphEntered">
+    <br><br>
+    <button onclick="replaceParagraph()">Replace</button>
+	
+	<p>Click the button to remove a paragraph tag.</p>
+	<button onclick="deleteParagraph()">Delete</button>
+<script>
+function createParagraph() {
+    var paragraphTag = document.createElement("P");
+	var t = document.createTextNode("This is a paragraph.");
+    paragraphTag.appendChild(t);
+    document.body.appendChild(paragraphTag);
+}
+function replaceParagraph() {
+    //var textBoxValue = document.getElementById("paragraphEntered").value;
+	//var newTextBoxValue = document.getElementsByTagName("P")[2].innerHTML="Edited Paragraph";
+	
+	var textBoxValue = document.getElementById("paragraphEntered").value;
+	document.getElementsByTagName("P")[3].innerHTML = textBoxValue;
+} 
+
+function deleteParagraph() {
+	var paragraphValue = document.getElementsByTagName("P")[3];
+	paragraphValue.removeChild(paragraphValue.childNodes[3]);
+}
+</script>
+</body>
+</html>

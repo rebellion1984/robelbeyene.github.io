@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+var requestURL = 'https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/example.json';
+var request = new XMLHttpRequest();
+request.open('GET', requestURL);
+request.responseType = 'json'
+request.send();
+
+request.onload = function () {
+var superHeroes = request.response;
+ var myH1 = document.createElement('h1');
+ myH1.textContent = superHeroes['squadName'];
+ var textToDisplay = document.getElementsByTagName('head')[0].appendChild(myH1);
+ //document.write(textToDisplay);
+ console.log(textToDisplay);
+ //window.alert(textToDisplay);
+} 
+
+/* request.addEventListener("readystatechange", processRequest, false);
+
+function processRequest(e) {
+    if (request.readyState == 4 && request.status == 200) {
+        var response = JSON.parse(request.responseText);
+        alert(response.ip);
+    }
+} */
+</script>
+
+</body>
+</html>
+

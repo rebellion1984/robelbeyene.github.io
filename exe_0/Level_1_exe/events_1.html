@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+
+    <script>
+        var personObject = {
+            name: "Robel",
+            age: 33,
+            occupation: "software developer"
+        };
+
+        document.write("<p>Original values</p>");
+        document.write("Name:  ", personObject.name, " ");
+        document.write("  Age: ", personObject.age, " ,");
+        document.write("  occupation: ", personObject.occupation);
+
+        document.write("<br>");
+        //edited properties
+        document.write("<p>Edited values</p>");
+        document.write("Name:  ", personObject.name = "Elliot");
+        document.write("  Age: ", personObject.age = "100", " ,")
+        document.write("  occupation: ", personObject.occupation = "Boss");
+
+        function increaseAge() {
+            window.alert(parseInt(personObject.age) + 1);
+        }
+
+    </script>
+
+    <p> Click button to increase age </p>
+    <button onclick="increaseAge()">Increase Age:</button>
+
+</body>
+
+</html>
